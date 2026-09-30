@@ -1,0 +1,77 @@
+// Get HTML elements
+const productImage = document.getElementById("productImage");
+const productName = document.getElementById("productName");
+const productDescription = document.getElementById("productDescription");
+const productPrice = document.getElementById("productPrice");
+
+const buyBtn = document.getElementById("buyBtn");
+const message = document.getElementById("message");
+
+const userName = document.getElementById("userName");
+const welcomeBtn = document.getElementById("welcomeBtn");
+const welcomeMessage = document.getElementById("welcomeMessage");
+
+const changeProductBtn = document.getElementById("changeProductBtn");
+
+
+// Original Image
+const originalImage =
+    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600";
+
+// Hover Image
+const hoverImage =
+    "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600";
+
+
+// 1. Buy Now Button
+buyBtn.addEventListener("click", function () {
+
+    message.innerText = "Thank you! Your headphone order has been placed.";
+
+});
+
+
+// 2. Welcome User
+welcomeBtn.addEventListener("click", function () {
+
+    const name = userName.value.trim();
+
+    if (name === "") {
+        welcomeMessage.innerText = "Please enter your name.";
+    } else {
+        welcomeMessage.innerText = `Welcome, ${name}!`;
+    }
+
+});
+
+
+// 3. Change Product
+changeProductBtn.addEventListener("click", function () {
+
+    productImage.src =
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600";
+
+    productName.innerText = "Pro Gaming Headphones";
+
+    productDescription.innerText =
+        "Experience powerful bass and crystal-clear sound for gaming and music.";
+
+    productPrice.innerText = "$149";
+
+});
+
+
+// 4. Mouse Over
+productImage.addEventListener("mouseover", function () {
+
+    productImage.src = hoverImage;
+
+});
+
+
+// 5. Mouse Out
+productImage.addEventListener("mouseout", function () {
+
+    productImage.src = originalImage;
+
+});
